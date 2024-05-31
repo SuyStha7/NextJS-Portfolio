@@ -35,7 +35,7 @@ import { motion } from "framer-motion";
 const Services = () => {
   return (
     <section className='min-h-[80vh] flex flex-col justify-center py-12 xl:py-0'>
-      <div className='container mx-auto'>
+      <div className='container mx-auto max-w-screen-lg h-full'>
         <motion.div
           initial={{ opacity: 0 }}
           animate      ={{

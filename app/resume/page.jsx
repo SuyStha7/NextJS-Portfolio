@@ -11,7 +11,10 @@ import {
   SiBootstrap,
   SiTypescript,
   SiMongodb,
+  SiExpress,
 } from "react-icons/si";
+import { FaSass } from "react-icons/fa6";
+
 
 const about = {
   title: "About me",
@@ -50,7 +53,7 @@ const experience = {
   desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   items: [
     {
-      company: "Syders Lab Pvt. Ltd",
+      company: "Spyders Lab Pvt. Ltd",
       position: "Frontend Developer",
       duration: "Sept 2022 - Dec 2022",
     },
@@ -122,16 +125,20 @@ const skills = {
       name: "Javascript",
     },
     {
-      icon: <SiTypescript/>,
+      icon: <SiTypescript />,
       name: "Typescript",
     },
     {
-      icon: <SiTailwindcss />,
-      name: "Tailwind CSS",
+      icon: <FaSass />,
+      name: "SASS",
     },
     {
       icon: <SiBootstrap />,
       name: "Bootstrap 5",
+    },
+    {
+      icon: <SiTailwindcss />,
+      name: "Tailwind CSS",
     },
     {
       icon: <SiReact />,
@@ -148,6 +155,10 @@ const skills = {
     {
       icon: <SiMongodb />,
       name: "Mongodb",
+    },
+    {
+      icon: <SiExpress />,
+      name: "Express JS",
     },
   ],
 };
@@ -168,6 +179,7 @@ import {
 
 import { ScrollArea } from "../../components/ui/scroll-area";
 import { motion } from "framer-motion";
+import Stats from "../../components/Stats";
 
 const Resume = () => {
   return (
@@ -192,7 +204,8 @@ const Resume = () => {
           {/* content */}
           <div className='min-h-[70vh] w-full'>
             {/* about me */}
-            <TabsContent
+           <div>
+           <TabsContent
               value='about'
               className='w-full text-center xl:text-left'>
               <div className='flex flex-col gap-[30px]'>
@@ -201,12 +214,17 @@ const Resume = () => {
                   {about.desc}
                 </p>
                 <ScrollArea>
-                  <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0" >
+                  <ul className='grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0'>
                     {about.info.map((item, index) => {
                       return (
-                        <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
-                          <span className="text-white/60"> {item.fieldName}</span>
-                          <span className="text-xl"> {item.fieldValue}</span>
+                        <li
+                          key={index}
+                          className='flex items-center justify-center xl:justify-start gap-4'>
+                          <span className='text-white/60'>
+                            {" "}
+                            {item.fieldName}
+                          </span>
+                          <span className='text-xl'> {item.fieldValue}</span>
                         </li>
                       );
                     })}
@@ -214,7 +232,7 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
-
+           </div>
             {/* education */}
             <TabsContent
               value='education'
@@ -231,7 +249,7 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className='bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-6'>
+                          className='bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1'>
                           <span className='text-accent'> {item.duration}</span>
                           <h3 className='text-xl max-h-[260px] min-h-[60px] text-center lg:text-left'>
                             {item.degree}
