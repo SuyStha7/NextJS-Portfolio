@@ -23,32 +23,32 @@ const projects = [
   {
     num: "01",
     category: "frontend",
-    title: "Todo List",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, unde nostrum! Vel in eveniet, error repellendus tenetur blanditiis deserunt officia, a explicabo quod, pariatur perspiciatis corporis. Fugiat libero autem suscipit!",
+    title: "KFC",
+    desc: "This is a static page that presents a food-related web page using HTML, CSS, and JavaScript. It includes a dark mode and is quite responsive. I recently demonstrated my expertise of this project as a beginner.",
     stack: [{ name: "HTML 5" }, { name: "CSS 3" }, { name: "Javascript" }],
-    image: "/assets/work/thumb2.png",
-    live: "",
-    github: "",
+    image: "/assets/work/thumb3.png",
+    live: "https://kfcmain.netlify.app/",
+    github: "https://www.instagram.com/__stha.suyog7/",
   },
   {
     num: "02",
     category: "frontend",
-    title: "KFC",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, unde nostrum! Vel in eveniet, error repellendus tenetur blanditiis deserunt officia, a explicabo quod, pariatur perspiciatis corporis. Fugiat libero autem suscipit!",
-    stack: [{ name: "HTML 5" }, { name: "CSS 3" }, { name: "Javascript" }],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    github: "",
+    title: "Todo List",
+    desc: "This task is a to-do list where we may add our to-do, ongoing, and completed activities and choose the corresponding tech task. We can enumerate other tasks that we've finished.",
+    stack: [{ name: "React" }, { name: "Javascript" }],
+    image: "/assets/work/thumb2.png",
+    live: "https://suyog-todo-list.vercel.app/",
+    github: "https://www.instagram.com/__stha.suyog7/",
   },
   {
     num: "03",
     category: "frontend",
     title: "Tic-Tac-Toe",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, unde nostrum! Vel in eveniet, error repellendus tenetur blanditiis deserunt officia, a explicabo quod, pariatur perspiciatis corporis. Fugiat libero autem suscipit!",
+    desc: "In this small-scale project, I've used basic React. Hooks allowed me to add some logic to my code. I have included some exciting UI/UX design for players.",
     stack: [{ name: "React JS" }, { name: "SCSS" }],
     image: "/assets/work/thumb1.png",
-    live: "",
-    github: "",
+    live: "https://tictactoe-suyog.netlify.app/",
+    github: "https://www.instagram.com/__stha.suyog7/",
   },
   {
     num: "04",
@@ -63,7 +63,7 @@ const projects = [
     ],
     image: "/assets/work/thumb2.png",
     live: "",
-    github: "",
+    github: "https://www.instagram.com/__stha.suyog7/",
   },
   {
     num: "05",
@@ -77,7 +77,7 @@ const projects = [
     ],
     image: "/assets/work/thumb3.png",
     live: "",
-    github: "",
+    github: "https://www.instagram.com/__stha.suyog7/",
   },
 ];
 
@@ -88,105 +88,118 @@ const Work = () => {
     setProject(projects[currentIndex]);
   };
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: 2.4, duration: 0.3, ease: "easeIn" },
-      }}
-      className='min-h-[80vh] flex flex-col justify-center py-12 xl:py-0'>
+    <section className='min-h-[80vh] flex flex-col justify-center py-12 xl:py-0'>
       <div className='container mx-auto'>
         <div className='flex flex-col xl:flex-row xl:gap-[30px]'>
-          <div className='w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none'>
-            <div className='flex flex-col gap-[30px] h-[50%]'>
-              {/* num */}
-              <div className='text-8xl leading-none font-extrabold text-transparent text-outline'>
-                {project.num}
-              </div>
-
-              <div className='flex flex-col xl:flex-row xl:justify-start gap-6'>
-                {/* title */}
-                <h2 className='text-[50px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize'>
-                  {project.title}
-                </h2>
-
-                {/* */}
-                <p className='text-[20px] font-semibold leading-none mt-5 text-accent group-hover:text-accent transition-all duration-500 capitalize'>
-                  {project.category} project
-                </p>
-              </div>
-
-              {/* description */}
-              <p className='text-white/60'>{project.desc}</p>
-
-              {/* stack */}
-              <ul className='flex gap-4'>
-                {project.stack.map((item, index) => {
-                  return (
-                    <li
-                      key={index}
-                      className='text-xl text-accent'>
-                      {item.name}
-                      {index !== project.stack.length - 1 && ","}
-                    </li>
-                  );
-                })}
-              </ul>
-
-              {/* border */}
-              <div className='border border-white/20'></div>
-
-              {/* buttons */}
-              <div className='flex items-center gap-4'>
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
-                        <BsArrowUpRight className='text-white text-3xl group-hover:text-accent' />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live Project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
-                        <BsGithub className='text-white text-3xl group-hover:text-accent' />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-              </div>
+          <motion.div
+            initial={{ x: -300, opacity: 0 }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                delay: 1,
+                duration: 0.3,
+                ease: "easeIn",
+              },
+            }}
+            className='flex flex-col gap-[30px] h-[50%] w-full xl:w-[50%] xl:h-[460px]  xl:justify-between order-2 xl:order-none'>
+            {/* num */}
+            <div className='text-6xl leading-none font-extrabold text-transparent text-outline'>
+              {project.num}
             </div>
-          </div>
 
-          <div className='w-full xl:w-[50%]'>
+            <div className='flex flex-col xl:flex-row xl:justify-start gap-6'>
+              {/* title */}
+              <h2 className='text-[50px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize'>
+                {project.title}
+              </h2>
+
+              {/* */}
+              <p className='text-[20px] font-semibold leading-none mt-5 text-accent group-hover:text-accent transition-all duration-500 capitalize'>
+                {project.category} project
+              </p>
+            </div>
+
+            {/* description */}
+            <p className='text-white/60'>{project.desc}</p>
+
+            {/* stack */}
+            <ul className='flex gap-4'>
+              {project.stack.map((item, index) => {
+                return (
+                  <li
+                    key={index}
+                    className='text-xl text-accent'>
+                    {item.name}
+                    {index !== project.stack.length - 1 && ","}
+                  </li>
+                );
+              })}
+            </ul>
+
+            {/* border */}
+            <div className='border border-white/20'></div>
+
+            {/* buttons */}
+            <div className='flex items-center gap-4'>
+              <Link href={project.live}>
+                <TooltipProvider delayDuration={100}>
+                  <Tooltip>
+                    <TooltipTrigger className='w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group transition-all duration-500 hover:rotate-45'>
+                      <BsArrowUpRight className='text-white text-2xl group-hover:text-accent' />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Live Project</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </Link>
+
+              <Link href={project.github}>
+                <TooltipProvider delayDuration={100}>
+                  <Tooltip>
+                    <TooltipTrigger className='w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group'>
+                      <BsGithub className='text-white text-2xl group-hover:text-accent' />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Github</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </Link>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ x: 300, opacity: 0 }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                delay: 1,
+                duration: 0.3,
+                ease: "easeIn",
+              },
+            }}
+            className='w-full xl:w-[50%]'>
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
               onSlideChange={handleSlideChange}
-              className='xl:h-[520px] mb-12'>
+              className='xl:h-[500px] mb-12'>
               {projects.map((project, index) => {
                 return (
                   <SwiperSlide
                     key={index}
                     className='w-full'>
-                    <div className='h-[460px] relative group flex justify-center items-center bg-pink-50/20'>
+                    <div className='h-[450px] relative group flex justify-center items-center'>
                       {/* overlay */}
                       <div className='absolute top-0 bottom-0 w-full h-full bg-black/10 z-10'></div>
                       {/* image */}
-                      <div className='relative w-full h-full'>
+                      <div className='relative w-full h-full rounded-md'>
                         <Image
                           src={project.image}
-                          fill
-                          className='object-cover'
+                          layout='fill'
                           alt=''
                         />
                       </div>
@@ -201,10 +214,10 @@ const Work = () => {
                 btnStyles='bg-accent hover:bg-accent-hover text-white font-extrabold text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all'
               />
             </Swiper>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

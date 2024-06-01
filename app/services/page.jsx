@@ -6,7 +6,7 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    title: "Web Design",
+    title: "UI/UX Design",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     href: "",
   },
@@ -17,14 +17,14 @@ const services = [
     href: "",
   },
   {
-    num: "01",
-    title: "Web Design",
+    num: "03",
+    title: "Deployment",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     href: "",
   },
   {
-    num: "02",
-    title: "Web Development",
+    num: "04",
+    title: "Database Management",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     href: "",
   },
@@ -38,7 +38,7 @@ const Services = () => {
       <div className='container mx-auto max-w-screen-lg h-full'>
         <motion.div
           initial={{ opacity: 0 }}
-          animate      ={{
+          animate={{
             opacity: 1,
             transition: { delay: 2.4, duration: 0.3, ease: "easeIn" },
           }}
@@ -55,16 +55,18 @@ const Services = () => {
                   </div>
                   <Link
                     href={service.href}
-                    className='w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45 '>
-                    <BsArrowDownRight className='text-primary text-3xl' />
+                    className='w-[50px] h-[50px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45 '>
+                    <BsArrowDownRight className='text-primary text-2xl' />
                   </Link>
                 </div>
 
                 {/* title */}
-                <h2 className="text-[42px] font-cold leading-none text-white group-hover:text-accent transition-all duration-500">{service.title}</h2>
+                <h2 className='text-[36px] font-cold leading-none text-white group-hover:text-accent transition-all duration-500'>
+                  {service.title}
+                </h2>
 
                 {/* description */}
-                <p className="text-white/60">{service.desc}</p>
+                <p className='text-white/60'>{service.desc}</p>
 
                 {/* border */}
                 <div className='border-b border-white/20 w-full'></div>

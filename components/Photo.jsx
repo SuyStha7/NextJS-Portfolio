@@ -3,37 +3,22 @@ import Image from "next/image";
 
 const Photo = () => {
   return (
-    <div className='w-full h-full relative'>
+    <div className='w-full h-full relative flex justify-center items-center'>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
           transition: { delay: 2, duration: 0.3, ease: "easeIn" },
-        }}>
-        {/* Image */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: { delay: 2.4, duration: 0.3, ease: "easeInOut" },
-          }}
-          className='w-[298px] h-[298px] xl:w-[450px] xl:h-[450px] mix-blend-lighten absolute'>
-          <Image
-            src='/assets/photo.png'
-            priority
-            quality={100}
-            fill
-            alt=''
-            className='object-contain'
-          />
-        </motion.div>
+        }}
+        className='relative'>
 
-        {/* circle */}
+        {/* Circle SVG */}
         <motion.svg
-          className='w-[300px] xl:w-[450px] h-[300px] xl:h-[450px]'
+          className='w-[300px] xl:w-[420px] h-[300px] xl:h-[420px]'
           fill='transparent'
           viewBox='0 0 506 506'
-          xmlns='http://www.w3.org/2000/svg'>
+          xmlns='http://www.w3.org/2000/svg'
+          style={{ position: "absolute", top: 0, left: 0, zIndex: 10 }}>
           <motion.circle
             cx='253'
             cy='253'
@@ -51,8 +36,28 @@ const Photo = () => {
               duration: 20,
               repeat: Infinity,
               repeatType: "reverse",
-            }}></motion.circle>
+            }}
+          />
         </motion.svg>
+
+        {/* Image */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: { delay: 2.4, duration: 0.3, ease: "easeInOut" },
+          }}
+          className='w-[300px] xl:w-[420px] h-[300px] xl:h-[420px] rounded-full overflow-hidden'
+          style={{ clipPath: "circle(50% at 50% 50%)" }}>
+          <Image
+            src='/assets/photo1.png'
+            priority
+            quality={100}
+            layout='fill'
+            objectFit='cover'
+            alt='Photo'
+          />
+        </motion.div>
       </motion.div>
     </div>
   );
